@@ -1,0 +1,16 @@
+name: Build Vue
+on: [push]
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    name: Build Vue
+    steps:
+    - uses: actions/checkout@v2
+    - id: Build-Vue
+      uses: Daniele-Tentoni/VuePagesAction@a2d9d41dd42b6796a020b50fbd629805ff0d0b62
+      with:
+        username: 'mwnnn'
+        reponame: 'sap-table'
+        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+        useyarn: true
+        gitbranch: 'main'
